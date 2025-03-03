@@ -6,7 +6,13 @@ services:
     build: .
     image: error_tracking:v01
     restart: always
+    networks:
+      - rabbitmq_net
 
+networks:
+  rabbitmq_net:
+    name: rabbitmq_net
+    external: true
 
 
 
