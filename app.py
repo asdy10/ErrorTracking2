@@ -31,7 +31,7 @@ def receive_messages():
         except Exception as e:
             print(e)
 
-    channel.basic_consume(queue=QUEUE_NAME, on_message_callback=callback)
+    channel.basic_consume(queue=QUEUE_NAME, on_message_callback=callback, auto_ack=True)
     channel.start_consuming()
 
 
